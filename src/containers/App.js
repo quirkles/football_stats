@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Navbar from  './components/Navbar/Navbar'
-import UpdatePlayer from './containers/UpdatePlayer';
-import Home from './components/Home/Home';
+import Navbar from  '../components/Navbar/Navbar'
+import UpdatePlayer from '../components/Player/UpdatePlayer';
+import Home from '../components/Home/Home';
 
 import './App.css';
 

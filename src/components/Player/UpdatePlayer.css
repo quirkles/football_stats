@@ -12,6 +12,10 @@
     display: flex;
 }
 
+.stats li {
+    list-style: none;
+}
+
 .image {
     border: 1px solid black;
     height: 150px;
