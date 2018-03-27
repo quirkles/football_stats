@@ -14,6 +14,12 @@ class App extends Component {
         <UpdatePlayer/>
         <UpdatePlayer/>
         <UpdatePlayer/>
+        <UpdatePlayer/>
+        <UpdatePlayer/>
+        <UpdatePlayer/>
+        <UpdatePlayer/>
+        <UpdatePlayer/>
+        <UpdatePlayer/>
       </div>
     );
   }
