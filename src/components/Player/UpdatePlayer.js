@@ -1,13 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './UpdatePlayer.css';
-import Player from '../../containers/Player';
+import PlayerCard from '../../containers/PlayerCard';
+import StatsTable from '../../containers/StatsTable';
 
 const updatePlayer = () => {
     return (
-        <Player />
-        // <Name />
-        // <Image />
-        // <Stats />
+        <div>
+            <PlayerCard />
+        <StatsTable />
+        {/* // <Image />
+        // <Stats /> */}
+        </div>
+        
     )
 }
 

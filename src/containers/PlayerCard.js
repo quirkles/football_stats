@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
 
-class Player extends Component {
+class PlayerCard extends Component {
     state = {
-        number: 99,
-        name: 'Player',
-        apps: 17,
-        goals: 12,
-        assists: 9,
-        motm: 0
-    }
-
-    updateStatsHandler () {
-
+        number: 0,
+        name: '',
+        stats: [
+            {
+            apps: 0,
+            goals: 0,
+            assists: 0,
+            motm: 0
+            }
+        ]  
     }
 
     render() {
         return (
             <div className='PlayerCard'>
                 <div>
-                    <h1>{this.state.name}</h1>
+                    <h3>{this.state.name}</h3>
                 </div>
             <hr />
                 <div className='cardImage'>
@@ -29,10 +29,10 @@ class Player extends Component {
                 <div className='stats'>
                 <table>
                     <tr className='statsCounted'>
-                        <td>{this.state.apps}</td>
-                        <td>{this.state.goals}</td>
-                        <td>{this.state.assists}</td>
-                        <td>{this.state.motm}</td>
+                        <td>{this.state.stats[0].apps}</td>
+                        <td>{this.state.stats[0].goals}</td>
+                        <td>{this.state.stats[0].assists}</td>
+                        <td>{this.state.stats[0].motm}</td>
                     </tr>
                     <tr>
                         <td><i className="i far fa-check-square"></i></td>
@@ -47,4 +47,4 @@ class Player extends Component {
     }
 }
 
-export default Player;
+export default PlayerCard;

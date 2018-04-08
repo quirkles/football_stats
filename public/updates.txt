@@ -1,0 +1,86 @@
+ROUTES:
+
+0. Landing page
+1. Home
+2. Stats
+* Add player
+3. Update form
+4. Player page
+5. Sign in *
+6. Register *
+7. About 
+
+*************************************************************************************
+
+0. LANDING page
+
+Signup/ Register
+Pictures, description
+About 
+ 
+*************************************************************************************
+
+1. HOME: 
+
+Carousel stats
+Team leaderboard
+Team name
+
+*************************************************************************************
+
+2. STATS
+
+Dynamic table of stats
+Thumbnail picture
+Order by filters
+*Add player button (Admin only)
+
+*************************************************************************************
+
+3. UPDATE FORM
+
+Team result 
+Date
+Apps
+Goals
+assists
+motm
+(- / + buttons)
+
+*************************************************************************************
+
+4. PLAYER PAGE
+
+Player card with personal stats
+Graphs with progress over time
+
+*************************************************************************************
+
+5. SIGN IN 
+
+Sign in as Admin
+*Sign in to view (no account, possibly not necessary)
+
+*************************************************************************************
+
+6. REGISTER 
+
+*************************************************************************************
+
+7. ABOUT 
+
+Contact
+Instructions 
+
+*************************************************************************************
+
+FOR THE FUTURE
+
+usable for other teams
+create team badge etc from landing page
+integration with other leagues
+add languages
+make as an app
+
+
+
