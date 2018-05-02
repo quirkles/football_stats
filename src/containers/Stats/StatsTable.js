@@ -16,20 +16,22 @@ class StatsTable extends Component {
 
   render() {
     return (
+      
       <div className="statsTable">
-        <p>Stats table here</p>
+      <p>This is the stats page</p>
         <table border="1px solid black">
-          <thead>
-            <td> Player Number </td>
-            <td> Player Name </td>
-            <td> Appearances</td>
-            <td> Goals </td>
-            <td> Assists </td>
-            <td> Man of the Match </td>
-            {/* <!-- More categories possible - e.g Goal contributions, goals per game etc - perhaps under an advanced tab? --> */}
-          </thead>
           <tbody>
             <tr>
+            <td>No.</td>
+            <td>Name</td>
+            <td>Apps</td>
+            <td>Goals</td>
+            <td>Assists</td>
+            <td>MotM</td>
+            </tr>
+            
+            {/* <!-- More categories possible - e.g Goal contributions, goals per game etc - perhaps under an advanced tab? --> */}
+          <tr>
               <td> {this.state.number} </td>
               <td> {this.state.name} </td>
               <td> {this.state.stats[0].apps} </td>

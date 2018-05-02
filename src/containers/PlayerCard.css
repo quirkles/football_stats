@@ -1,0 +1,71 @@
+.PlayerCard {
+  width: auto;
+  height: auto;
+  border: solid black 2px;
+  border-radius: 10px;
+  margin: 30px;
+  background-color: azure;
+  display: inline-block;
+  padding: 5px;
+  box-shadow: 5px 3px 3px darkgoldenrod;
+}
+
+.PlayerCard:hover {
+  border: 2px green solid;
+  background-color: rgb(192, 245, 138);
+  box-shadow: 5px 3px 3px #F39C12;
+}
+
+.cardImage {
+  display: inline-block;
+}
+
+#squadNumber {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #F39C12;
+  z-index: 1;
+  font-weight: bold;
+  line-height: 38px;
+}
+
+.stats {
+  display: inline-block;
+  /* border: 1px solid black; */
+  margin: 1px 10px;
+}
+
+.statsCounted {
+  background-color: #F39C12;
+  font-weight: bold;
+}
+
+.i {
+  font-size: 1.5em;
+}
+
+.i:hover {
+  border: 2px solid green;
+  background-color: #F39C12;
+  border-radius: 3px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+td {
+  padding: 5px 12px;
+}
+
+.image {
+  border: 1px solid black;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.image:hover {
+  cursor: pointer;
+}

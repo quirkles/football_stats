@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './PlayerCard.css';
 
 class PlayerCard extends Component {
   state = {
@@ -26,7 +27,7 @@ class PlayerCard extends Component {
           <img
             className="image"
             src="https://images.vexels.com/media/users/3/129733/isolated/preview/a558682b158debb6d6f49d07d854f99f-casual-male-avatar-silhouette-by-vexels.png"
-            alt='player'
+            alt="player"
           />
         </div>
         <hr />
