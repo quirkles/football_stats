@@ -4,9 +4,11 @@
 }
 
 .toggler {
-    color: black;
     border: 1px solid #cb2d3e;
     background-color: #cb2d3e;
+}
+
+.toggler:focus {
     outline: none;
 }
 

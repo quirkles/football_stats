@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from "reactstrap";
+import { Collapse, Navbar, NavbarToggler, Nav } from "reactstrap";
 
 class NavBar extends Component {
   constructor(props) {
@@ -22,15 +22,15 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar className="navbarMain">
-          <NavLink to="/" exact className="navbar-brand" href="#">
+        <Navbar light className="navbarMain">
+          <NavLink to="/" exact className="navbar-brand">
             <img
               src="https://www.iflmadrid.com/sites/default/files/styles/medium/public/team/logo/branch_liverpool2.jpg?itok=gCP3jpTE"
               className="img-thumbnail"
               alt="badge"
             />
           </NavLink>
-          <NavLink to="/" exact className="nav-link">
+          <NavLink to="/home/" exact className="nav-link">
             Home
           </NavLink>
           <NavLink to="/squad/" exact className="nav-link">
