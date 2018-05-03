@@ -6,6 +6,8 @@ class Squad extends Component {
     return (
       <div>
          <PlayerCard />
+         <PlayerCard />
+         <PlayerCard />
         <p>This is the squad page</p>
       </div>
      

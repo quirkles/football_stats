@@ -50,7 +50,7 @@ class NavBar extends Component {
                 </li>
                 <li className="nav-item">
                   <NavLink to="/register/" exact className="nav-link">
-                    Register
+                    Sign Up
                   </NavLink>
                 </li>
                 <li>
