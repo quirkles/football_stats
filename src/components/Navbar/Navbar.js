@@ -24,20 +24,16 @@ class NavBar extends Component {
       <div>
         <Navbar light className="navbarMain">
           <NavLink to="/" exact className="navbar-brand">
-            <img
-              src="https://www.iflmadrid.com/sites/default/files/styles/medium/public/team/logo/branch_liverpool2.jpg?itok=gCP3jpTE"
-              className="img-thumbnail"
-              alt="badge"
-            />
+            <i class="far fa-futbol"></i>
           </NavLink>
           <NavLink to="/home/" exact className="nav-link">
-            Home
+            <span className='navel'> Home </span> <i className="fas fa-home"></i>
           </NavLink>
           <NavLink to="/squad/" exact className="nav-link">
-            Squad
+          <span className='navel'> Squad </span> <i className="fas fa-users"></i>
           </NavLink>
           <NavLink to="/stats/" exact className="nav-link">
-            Stats
+          <span className='navel'> Stats </span> <i class="fas fa-chart-line"></i>
           </NavLink>
           <NavbarToggler onClick={this.toggleNavbar} className="toggler" />
           <Collapse isOpen={!this.state.collapsed} navbar>

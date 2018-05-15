@@ -1,11 +1,14 @@
 .navbarMain {
     background-color: white;
     width: 100%;
+    text-align: center;
 }
 
 .toggler {
-    border: 1px solid #cb2d3e;
-    background-color: #cb2d3e;
+    /* border: 1px dashed #cb2d3e; */
+    border: 0;
+    /* background-color: #cb2d3e; */
+    background-color: white;
 }
 
 .toggler:focus {
@@ -20,4 +23,18 @@ img {
 .nav-link {
     color: #cb2d3e;
     text-align: right;
+    vertical-align: middle;
 }
+@media screen and (max-width: 600px) {
+    img {
+      display: none;
+    }
+    .navel {
+        display: none;
+    }
+  }
+/* span.navbar-toggler-icon {
+    height: 1em;
+    width: 1em;
+} */
+
