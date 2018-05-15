@@ -1,11 +1,13 @@
 .navbarMain {
     background-color: white;
     width: 100%;
+    display: flex;
 }
 
 .toggler {
     border: 1px solid #cb2d3e;
     background-color: #cb2d3e;
+    float: right;
 }
 
 .toggler:focus {
@@ -13,11 +15,17 @@
 }
 
 img {
-    height: 75px;
-    width: 75px;
+    height: auto;
+    width: 25%;
+    float: left;
+    margin: 0;
 }
+
+
 
 .nav-link {
     color: #cb2d3e;
-    text-align: right;
+    text-align: right; 
+    margin: 0;
+    justify-content: space-between;
 }

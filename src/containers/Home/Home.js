@@ -6,6 +6,7 @@ class Home extends Component {
         return (
             <div>
                 <h1>This is the HOME page</h1>
+                <p>Carousel with stats / pics here</p>
             </div>
         )
     }
