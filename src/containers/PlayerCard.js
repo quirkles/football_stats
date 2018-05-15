@@ -4,7 +4,7 @@ import './PlayerCard.css';
 class PlayerCard extends Component {
   state = {
     number: 0,
-    name: "",
+    name: "Name",
     stats: [
       {
         apps: 0,
@@ -33,6 +33,7 @@ class PlayerCard extends Component {
         <hr />
         <div className="stats">
           <table>
+            <tbody>
             <tr className="statsCounted">
               <td>{this.state.stats[0].apps}</td>
               <td>{this.state.stats[0].goals}</td>
@@ -53,6 +54,8 @@ class PlayerCard extends Component {
                 <i className="i fas fa-beer" />
               </td>
             </tr>
+            </tbody>
+            
           </table>
         </div>
       </div>

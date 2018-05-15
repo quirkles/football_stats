@@ -8,7 +8,6 @@ class Squad extends Component {
          <PlayerCard />
          <PlayerCard />
          <PlayerCard />
-        <p>This is the squad page</p>
       </div>
      
     )
