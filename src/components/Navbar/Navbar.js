@@ -22,7 +22,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar light className="navbarMain">
+        <Navbar light className="navbarMain navbar-brand">
           <NavLink to="/" exact className="navbar-brand">
             <img
               src="https://www.iflmadrid.com/sites/default/files/styles/medium/public/team/logo/branch_liverpool2.jpg?itok=gCP3jpTE"
