@@ -22,7 +22,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar light className="navbarMain">
+        <Navbar light className="navbarMain navbar-brand">
           <NavLink to="/" exact className="navbar-brand">
             <i class="far fa-futbol"></i>
           </NavLink>
