@@ -21,7 +21,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="navb">
         <Navbar light className="navbarMain navbar-brand">
           <NavLink to="/" exact className="navbar-brand">
             <i class="far fa-futbol"></i>
@@ -40,17 +40,17 @@ class NavBar extends Component {
             <Nav navbar>
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink to="/login/" exact className="nav-link">
+                  <NavLink to="/login/" exact className="nav-link login-menu">
                     Login
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/register/" exact className="nav-link">
+                  <NavLink to="/register/" exact className="nav-link login-menu">
                     Sign Up
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/about/" exact className="nav-link">
+                  <NavLink to="/about/" exact className="nav-link login-menu">
                     About
                   </NavLink>
                 </li>
