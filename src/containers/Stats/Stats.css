@@ -1,0 +1,15 @@
+.table {
+  width: 80%;
+  margin: 10px auto;
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid #D50000;
+  box-shadow: 3px 2px 6px #FF5252, 6px 4px 6px white;
+
+}
+
+.numberCol {
+  color: #D50000;
+  margin: 2px;
+  font-weight: bold;
+}

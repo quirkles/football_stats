@@ -24,16 +24,16 @@ class NavBar extends Component {
       <div className="navb">
         <Navbar light className="navbarMain navbar-brand">
           <NavLink to="/" exact className="navbar-brand">
-            <i class="far fa-futbol"></i>
+            <i className="far fa-futbol"></i>
           </NavLink>
           <NavLink to="/home/" exact className="nav-link">
             <span className='navel'> Home </span> <i className="fas fa-home"></i>
           </NavLink>
-          <NavLink to="/squad/" exact className="nav-link">
-          <span className='navel'> Squad </span> <i className="fas fa-users"></i>
+          <NavLink to="/team/" exact className="nav-link">
+          <span className='navel'> Team </span> <i className="fas fa-users"></i>
           </NavLink>
           <NavLink to="/stats/" exact className="nav-link">
-          <span className='navel'> Stats </span> <i class="fas fa-chart-line"></i>
+          <span className='navel'> Stats </span> <i className="fas fa-chart-line"></i>
           </NavLink>
           <NavbarToggler onClick={this.toggleNavbar} className="toggler" />
           <Collapse isOpen={!this.state.collapsed} navbar>
