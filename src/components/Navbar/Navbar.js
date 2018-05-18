@@ -23,49 +23,93 @@ class NavBar extends Component {
     return (
       <div>
         <Navbar light 
-          className={classes.navbarBrand} 
-          className={classes.navbarMain}>
+          className={`${classes.navbarBrand} 
+          ${classes.navbarMain}`}>
+
+          {/* Football icon (will become brand logo) */}
+
             <NavLink 
               to="/" 
               exact 
-              className="navbar-brand">
+              className={classes.navbarBrand}>
               <i style={{color:'white'}}className="far fa-futbol"></i>
             </NavLink>
+
+            {/* Team home page link */}
+
           <NavLink 
             to="/home/" 
             exact 
             className={classes.navLink}>
-            <span className='navel'> Home </span> <i className="fas fa-home"></i>
+            <span className={classes.navElem}>
+             Home  
+            </span> 
+            <i className="fas fa-home"></i>
           </NavLink>
+
+          {/* Squad page link */}
+
           <NavLink 
             to="/squad/" 
             exact 
             className={classes.navLink}>
             <span 
-              className='navel'> Squad </span> 
+              className={classes.navElem}> 
+              Squad 
+            </span> 
+        
             <i className="fas fa-users"></i>
           </NavLink>
+
+          {/* Stats page link */}
+
           <NavLink 
             to="/stats/" 
-            exact className={classes.navLink}>
-            <span className='navel'> Stats </span> <i className="fas fa-chart-line"></i>
+            exact 
+            className={classes.navLink}>
+            <span 
+            className={classes.navElem}>
+             Stats 
+             </span> 
+             <i className="fas fa-chart-line"></i>
           </NavLink>
-          <NavbarToggler onClick={this.toggleNavbar} className="toggler" />
+
+            {/* Login burger menu */}
+
+          <NavbarToggler 
+          onClick={this.toggleNavbar} 
+          className={classes.toggler} />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <NavLink to="/login/" exact className="nav-link login-menu">
+              <ul className={classes.navbarNav}>
+                <li className={classes.navItem}>
+                  <NavLink 
+                  to="/login/" 
+                  exact 
+                  className={`${classes.navLink}
+                  ${classes.loginMenu}`}
+                  >
                     Login
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink to="/register/" exact className="nav-link login-menu">
+                <li 
+                className={classes.navItem}>
+                  <NavLink 
+                  to="/register/" 
+                  exact 
+                  className={`${classes.navLink}
+                  ${classes.loginMenu}`}
+                  >
                     Sign Up
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/about/" exact className="nav-link login-menu">
+                  <NavLink 
+                  to="/about/" 
+                  exact 
+                  className={`${classes.navLink}
+                  ${classes.loginMenu}`}
+                  >
                     About
                   </NavLink>
                 </li>
