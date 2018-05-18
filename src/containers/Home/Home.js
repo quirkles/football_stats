@@ -21,7 +21,7 @@ import {
       caption: 'Slide 2'
     },
     {
-      src: 'https://i.ytimg.com/vi/F1CW0MjD1T0/maxresdefault.jpg',
+      src: 'http://spfltrust.org.uk/app/uploads/2014/08/SPLTrust018.jpg',
       altText: 'Slide 3',
       caption: 'Slide 3'
     }

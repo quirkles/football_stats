@@ -18,7 +18,7 @@ class StatsTable extends Component {
         motm: 2
       }
     }]
-  
+
     const columns = [{
       Header: '',
       accessor: 'number',
@@ -26,12 +26,12 @@ class StatsTable extends Component {
       className: 'numberCol', // Custom cell components!
       width: 40,
       resizable: false,
-      headerStyle: {fontWeight: 'bold'}
+      headerStyle: { fontWeight: 'bold' }
     }, {
       Header: 'image',
       // accessor: props => <img src={this.thumbnail} alt='tn' />,
       // Cell: props=> <img src={this.thumbnail} alt='thumbnail'/>  // String-based value accessors!
-    },{
+    }, {
       Header: 'Name',
       accessor: 'name',
       // String-based value accessors!
@@ -40,7 +40,7 @@ class StatsTable extends Component {
       Header: 'Apps',
       accessor: d => d.stats.apps,
       headerClassName: 'headerStyle' // Custom value accessors!
-    }, 
+    },
     {
       id: 'goals', // Required because our accessor is not a string
       Header: props => <span>Goals</span>,
@@ -53,20 +53,20 @@ class StatsTable extends Component {
       Header: 'MotM',
       accessor: d => d.stats.motm
     }]
-  return (
-    <div>
-      <ReactTable
-      data={data}
-      columns={columns}
-      className={classes.table}
-      showPaginationBottom={false}
-      minRows={1}  
-      defaultSortDesc={true} 
-    />
-    </div>
-    
-  )
-    
+    return (
+      <div>
+        <ReactTable
+          data={data}
+          columns={columns}
+          className={classes.table}
+          showPaginationBottom={false}
+          minRows={1}
+          defaultSortDesc={true}
+        />
+      </div>
+
+    )
+
   }
 }
 
