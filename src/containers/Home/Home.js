@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Home.css'
+import classes from './Home.module.css';
 
 import {
     Carousel,
@@ -13,7 +13,7 @@ import {
     {
       src: 'https://i.ytimg.com/vi/jgQGmpL25Fs/maxresdefault.jpg',
       altText: 'Slide 1',
-      caption: 'Slide 1'
+      caption: 'Slide 1',
     },
     {
       src: 'https://i.ytimg.com/vi/F1CW0MjD1T0/maxresdefault.jpg',
@@ -21,7 +21,7 @@ import {
       caption: 'Slide 2'
     },
     {
-      src: 'https://res.cloudinary.com/jpress/image/fetch/w_444,f_auto,ar_3:2,q_auto:low,c_fill/https://www.scotsman.com/webimage/1.4625269.1511873397!/image/image.jpg',
+      src: 'https://i.ytimg.com/vi/F1CW0MjD1T0/maxresdefault.jpg',
       altText: 'Slide 3',
       caption: 'Slide 3'
     }
@@ -69,16 +69,18 @@ import {
       const slides = items.map((item) => {
         return (
           <CarouselItem
+            className={classes.carouselItem}
             onExiting={this.onExiting}
             onExited={this.onExited}
+
             key={item.src}
           >
-            <img className='carousel' src={item.src} alt={item.altText} />
+            <img className={classes.carouselItem} src={item.src} alt={item.altText} />
             <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
           </CarouselItem>
         );
       });
-  
+
       return (
         <Carousel
           activeIndex={activeIndex}

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactTable from 'react-table';
 // import {ReactTableDefaults} from 'react-table';
 import 'react-table/react-table.css';
-import './StatsTable.css';
+import classes from './StatsTable.module.css';
 
 class StatsTable extends Component {
 
@@ -58,7 +58,7 @@ class StatsTable extends Component {
       <ReactTable
       data={data}
       columns={columns}
-      className={'table'}
+      className={classes.table}
       showPaginationBottom={false}
       minRows={1}  
       defaultSortDesc={true} 

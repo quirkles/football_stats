@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import classes from"./Navbar.module.css";
 import { Collapse, Navbar, NavbarToggler, Nav } from "reactstrap";
 
 class NavBar extends Component {
@@ -21,7 +21,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div className="navb">
+      <div>
         <Navbar light className="navbarMain navbar-brand">
           <NavLink to="/" exact className="navbar-brand">
             <i className="far fa-futbol"></i>
@@ -29,8 +29,8 @@ class NavBar extends Component {
           <NavLink to="/home/" exact className="nav-link">
             <span className='navel'> Home </span> <i className="fas fa-home"></i>
           </NavLink>
-          <NavLink to="/team/" exact className="nav-link">
-          <span className='navel'> Team </span> <i className="fas fa-users"></i>
+          <NavLink to="/squad/" exact className="nav-link">
+          <span className='navel'> Squad </span> <i className="fas fa-users"></i>
           </NavLink>
           <NavLink to="/stats/" exact className="nav-link">
           <span className='navel'> Stats </span> <i className="fas fa-chart-line"></i>

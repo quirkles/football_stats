@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './PlayerCard.css';
+import classes from './PlayerCard.module.css';
 
 class PlayerCard extends Component {
   state = {
@@ -17,24 +17,24 @@ class PlayerCard extends Component {
 
   render() {
     return (
-      <div className="PlayerCard">
+      <div className={classes.PlayerCard}>
         <div>
           <h3>{this.state.name}</h3>
         </div>
         <hr />
-        <div className="cardImage">
+        <div className={classes.cardImage}>
           <p id="squadNumber">#{this.state.number}</p>
           <img
-            className="image"
+            className={classes.image}
             src="https://images.vexels.com/media/users/3/129733/isolated/preview/a558682b158debb6d6f49d07d854f99f-casual-male-avatar-silhouette-by-vexels.png"
             alt="player"
           />
         </div>
         <hr />
-        <div className="stats">
+        <div className={classes.stats}>
           <table>
             <tbody>
-            <tr className="statsCounted">
+            <tr className={classes.statsCounted}>
               <td>{this.state.stats[0].apps}</td>
               <td>{this.state.stats[0].goals}</td>
               <td>{this.state.stats[0].assists}</td>
