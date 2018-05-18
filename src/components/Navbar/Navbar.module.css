@@ -25,19 +25,15 @@
     outline: none;
 } 
 
-img {
-    height: 75px;
-    width: 75px;
-}
-
 .nav-link {
     color: white;;
     text-align: right;
  } 
+
+ .nav-link:hover {
+     color: black;
+ }
  @media screen and (max-width: 600px) {
-    img {
-      display: none;
-    }
     .navel {
         display: none;
     }
