@@ -5,11 +5,6 @@ import 'react-table/react-table.css';
 import './StatsTable.css';
 
 class StatsTable extends Component {
-  state = {
-    data: {}
-  };
-
-
 
   render() {
     const data = [{
