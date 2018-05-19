@@ -49,6 +49,15 @@
     }
   } 
 
+  :global .navbar-toggler:before {
+    position: relative;
+    font-family: 'FontAwesome';
+    display: flex;
+    top: -5px;
+    left: -5px;
+    content: "\f005";
+  }
+
 :global .navbar-toggler {
     width: 1em;
     height: 1em;
