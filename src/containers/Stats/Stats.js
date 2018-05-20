@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import StatsTable from './StatsTable/StatsTable';
 import PlayerCard from './PlayerStats/PlayerCard';
 import axios from 'axios';
-import PlayerInfo from '../../components/Player/PlayerInfo';
 
 class Stats extends Component {
   state = {
@@ -15,19 +14,28 @@ class Stats extends Component {
         this.setState({ data: response.data })
         console.log(response);
       })
+      .catch(error => {
+        console.log(error);
+      })
   }
   render() {
-    const playerData = this.state.data.map(player => {
-      return <PlayerInfo name={player.name} id={player.id} address={player.address.street} key={player.id} />
-    }
 
-    );
+    // const statsTableData = this.state.data.map(player => {
+    //   return <StatsTable />
+    // })
+
+    const playerData = this.state.data.map(player => {
+      return <PlayerCard 
+        name={player.name} 
+        number={player.id} 
+        address={player.address.street} 
+        key={player.id} />
+    });
+
     return (
       <div>
         <StatsTable />
-        <PlayerCard />
-        {playerData}
-
+          {playerData}
       </div>
     )
 

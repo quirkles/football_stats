@@ -50,12 +50,12 @@ class NavBar extends Component {
           {/* Squad page link */}
 
           <NavLink
-            to="/squad/"
+            to="/team/"
             exact
             className={classes.navLink}>
             <span
               className={classes.navElem}>
-              Squad
+              Team
             </span>
 
             <i className="fas fa-users"></i>
