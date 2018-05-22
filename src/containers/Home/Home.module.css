@@ -1,5 +1,5 @@
 .caroImageBox {
-  max-height: 300px;
+  height: 300px;
   object-fit: cover;
   width: 100%;
   border-radius: 15px;

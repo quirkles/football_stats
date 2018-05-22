@@ -1,6 +1,20 @@
 .addButton {
   width: 100%;
   color: white;
-  background-color: #16A085; 
-  border-radius: 5px;
+  background-color: #5DADE2; 
+  border-radius: 5px 5px;
+  border: 2px solid white;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.addButton:hover {
+  color: #F2F3F4;
+  background-color:#2ECC71;
+}
+
+.addButton:focus {
+  outline: none;
 }

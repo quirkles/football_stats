@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-
+import Button from '../../components/Button/Button';
 class Team extends Component {
   render () {
     return (
       <div>
-        <p>This is the team page</p>
-        <p>Team fixtures / results published here</p>
+        <Button />
       </div>
      
     )
