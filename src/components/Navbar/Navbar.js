@@ -78,7 +78,7 @@ class NavBar extends Component {
 
           <NavbarToggler
             onClick={this.toggleNavbar}
-            className={classes.toggler} />
+            className={classes.toggler}/>
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <ul className={classes.navbarNav}>

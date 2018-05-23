@@ -22,6 +22,19 @@
   width: 100%;
   cursor: pointer;
   font-weight: bold;
+  border-radius: 5px;
+  color: #D50000;
+  background-color: white;
+  outline: none;
+}
+
+.moreStatsButton:focus {
+  outline: none;
+}
+
+.moreStatsButton:hover {
+  background-color: #2ECC71;
+  color: darkgreen;
 }
 
 .thumbnail {

@@ -75,7 +75,7 @@ render () {
       resizable: false
     },
     {
-      Header: <i class="far fa-handshake"></i>,
+      Header: <i className="far fa-handshake"></i>,
       accessor: 'assists',
       width: 40,
       resizable: false
