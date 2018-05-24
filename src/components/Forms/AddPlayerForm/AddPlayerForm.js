@@ -1,6 +1,6 @@
 import React from 'react';
 
-const addPlayer = () => {
+const addPlayerForm = () => {
   return (
     <div>
       <form>
@@ -10,4 +10,4 @@ const addPlayer = () => {
   )
 }
 
-export default addPlayer;
+export default addPlayerForm;

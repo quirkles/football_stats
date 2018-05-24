@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
-import Button from '../../components/Button/Button';
+import FixtureList from '../Team/FixturesList/FixturesList';
+import AddMatchForm from '../../components/Forms/AddMatchForm/AddMatchForm';
+import Aux from '../../hoc/Auxiliary';
 class Team extends Component {
   render () {
     return (
-      <div>
-        <Button />
-      </div>
+      <Aux>
+        <button>Add fixture</button>
+        <FixtureList />
+        <AddMatchForm />
+      </Aux>
      
     )
   }

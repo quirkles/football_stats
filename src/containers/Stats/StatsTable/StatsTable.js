@@ -1,8 +1,9 @@
 import React, {Component} from "react";
 import ReactTable from 'react-table';
-import Button from '../../../components/Button/Button';
 import 'react-table/react-table.css';
 import classes from './StatsTable.module.css';
+import Aux from '../../../hoc/Auxiliary';
+import DetailedStats from '../DetailedStats/DetailedStats';
 import axios from '../../../axios-instance';
 
 class StatsTable extends Component {
@@ -118,6 +119,7 @@ render () {
   ]
 
   return (
+    <Aux>
     <div className={classes.tableContainer}>
         <ReactTable
           data={data}
@@ -130,6 +132,9 @@ render () {
         />
         {/* <Button onClick={this.onAddPlayerClick()}/> */}
       </div>
+      <button>Add player</button>
+      <DetailedStats />
+      </Aux>
   )}
 }
 
