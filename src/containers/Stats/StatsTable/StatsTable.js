@@ -3,15 +3,16 @@ import ReactTable from 'react-table';
 import Button from '../../../components/Button/Button';
 import 'react-table/react-table.css';
 import classes from './StatsTable.module.css';
-import axios from 'axios';
+import axios from '../../../axios-instance';
 
 class StatsTable extends Component {
   state = {
-    data: []
+    data: [],
   }
 
   componentDidMount () {
     axios.get('https://jsonplaceholder.typicode.com/users')
+    // axios.get('.json')
       .then(response => {
         this.setState({ data: response.data })
         console.log(response)
@@ -20,6 +21,28 @@ class StatsTable extends Component {
         console.log(error);
       })
     }
+
+    // onAddPlayerClick = () => {
+    //   const playerDetails = {
+    //     data: this.state.data,
+    //     newPlayer: {
+    //       name: 'joe',
+    //       number: '2',
+    //       stats: {
+    //         apps: '10',
+    //         goals: '21',
+    //         assists: '23',
+    //         motm: '1'
+    //       }
+    //     }
+    //   }
+    //   axios.post('/player.json', playerDetails)
+    //   .then(response => {
+    //     console.log (response)
+    //   })
+    //   .catch(error => console.log(error));
+    // }
+
 render () {
 
   const data = this.state.data.map(player => {
@@ -105,7 +128,7 @@ render () {
           defaultSortDesc={true}
           expander={true}
         />
-        <Button />
+        {/* <Button onClick={this.onAddPlayerClick()}/> */}
       </div>
   )}
 }
