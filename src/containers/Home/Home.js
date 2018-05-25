@@ -72,12 +72,12 @@ class Home extends Component {
           onExiting={this.onExiting}
           onExited={this.onExited}
           key={item.src}>
-          <img 
-            className={classes.caroImageBox + ' ' + classes.caroImage} 
-            src={item.src} 
+          <img
+            className={classes.caroImageBox + ' ' + classes.caroImage}
+            src={item.src}
             alt={item.altText} />
-          <CarouselCaption 
-            captionText={item.caption} 
+          <CarouselCaption
+            captionText={item.caption}
             captionHeader={item.caption} />
         </CarouselItem>
       );
@@ -92,21 +92,21 @@ class Home extends Component {
         interval={7000}
         pause={'hover'}
       >
-        <CarouselIndicators 
+        <CarouselIndicators
           className={classes.indicators}
-          items={items} 
-          activeIndex={activeIndex} 
+          items={items}
+          activeIndex={activeIndex}
           onClickHandler={this.goToIndex} />
         {slides}
-        <CarouselControl 
-          className={classes.arrow} 
-          direction="prev" 
-          directionText="Previous" 
+        <CarouselControl
+          className={classes.arrow}
+          direction="prev"
+          directionText="Previous"
           onClickHandler={this.previous} />
-        <CarouselControl 
-          className={classes.arrow} 
-          direction="next" 
-          directionText="Next" 
+        <CarouselControl
+          className={classes.arrow}
+          direction="next"
+          directionText="Next"
           onClickHandler={this.next} />
       </Carousel>
     );

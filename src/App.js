@@ -1,14 +1,14 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./containers/Home/Home";
-import { BrowserRouter, Route } from "react-router-dom";
-import "./App.css";
 import Stats from "./containers/Stats/Stats";
 import Team from "./containers/Team/Team";
 import About from "./components/About/About";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/Login/Login";
 import Landing from './containers/Landing/Landing';
+import "./App.css";
 
 class App extends Component {
   render() {

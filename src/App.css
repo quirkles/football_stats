@@ -3,3 +3,7 @@
   margin: auto;
   outline: none;
 }
+
+button {
+  cursor: pointer;
+}

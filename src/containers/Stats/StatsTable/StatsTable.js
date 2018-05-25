@@ -5,6 +5,7 @@ import classes from './StatsTable.module.css';
 import Modal from '../../../components/UI/Modal/Modal';
 import Aux from '../../../hoc/Auxiliary';
 import DetailedStats from '../DetailedStats/DetailedStats';
+import Spinner from '../../../components/UI/Spinner/Spinner';
 import axios from '../../../axios-instance';
 
 class StatsTable extends Component {
@@ -19,33 +20,34 @@ class StatsTable extends Component {
     //   assists: 0,
     //   motm: 0
     // },
-    // loading: false,
-    viewingStats: false
+    loading: false,
+    viewingStats: false,
   }
 
   componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/users')
       .then(response => {
         console.log(response)
-        this.setState({data: response.data})
-      })  
+        this.setState({ data: response.data })
+      })
       .catch(error => alert('unable to fetch data', error));
-    }
-        
+  }
 
-// click handlers for name buttons
-viewStatsHandler = () => {
-  this.setState({viewingStats: true})
-}
 
-closeStatsHandler = () => {
-  this.setState({viewingStats: false})
-}
+  // click handlers for clicking on name buttons
+  viewStatsHandler = () => {
+    this.setState({ viewingStats: true })
+  }
+
+  closeStatsHandler = () => {
+    this.setState({ viewingStats: false })
+  }
   render() {
 
+    // data for rows in table
     const data = this.state.data.map(player => {
       return {
-        name: <button 
+        name: <button
           onClick={this.viewStatsHandler}
           className={classes.moreStatsButton}>{player.name}</button>,
         number: player.id,
@@ -62,7 +64,7 @@ closeStatsHandler = () => {
         delete: <button>x</button>
       }
     });
-
+    // data for columns in table
     const columns = [
       {
         Header: '',
@@ -82,8 +84,8 @@ closeStatsHandler = () => {
       {
         Header: 'Name',
         accessor: 'name',
-        headerStyle: {textAlign: 'left', fontWeight: 'bold'},
-        style: {textAlign:'left'}
+        headerStyle: { textAlign: 'left', fontWeight: 'bold' },
+        style: { textAlign: 'left' }
       },
       {
         Header: <i className="fas fa-check"></i>,
@@ -111,22 +113,31 @@ closeStatsHandler = () => {
       }
     ]
 
+    // components to render in each loading state
+    let dataTable = <ReactTable
+      data={data}
+      columns={columns}
+      className={classes.table}
+      showPaginationBottom={false}
+      minRows={1}
+      defaultSortDesc={true}
+      expander={true}
+    />;
+  
+
+    let individualStats = <DetailedStats data={this.state.data} />
+    if (this.state.loading) {
+      individualStats = <Spinner />;
+    }
+
     return (
       <Aux>
         <div className={classes.tableContainer}>
-          <ReactTable
-            data={data}
-            columns={columns}
-            className={classes.table}
-            showPaginationBottom={false}
-            minRows={1}
-            defaultSortDesc={true}
-            expander={true}
-          />
+          {dataTable}
         </div>
         <button>Add player</button>
         <Modal show={this.state.viewingStats} modalClosed={this.closeStatsHandler}>
-          <DetailedStats data={this.state.data}/>
+          {individualStats}
         </Modal>
       </Aux>
     )
