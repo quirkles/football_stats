@@ -8,7 +8,7 @@ import Team from "./containers/Team/Team";
 import About from "./components/About/About";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/Login/Login";
-import Landing from './components/Landing/Landing';
+import Landing from './containers/Landing/Landing';
 
 class App extends Component {
   render() {
