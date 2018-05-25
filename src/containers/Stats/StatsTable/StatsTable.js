@@ -4,29 +4,36 @@ import 'react-table/react-table.css';
 import classes from './StatsTable.module.css';
 import Modal from '../../../components/UI/Modal/Modal';
 import Aux from '../../../hoc/Auxiliary';
-import DetailedStats from '../../../components/DetailedStats/DetailedStats';
+import DetailedStats from '../DetailedStats/DetailedStats';
 import axios from '../../../axios-instance';
 
 class StatsTable extends Component {
   state = {
     data: [],
+    // name: '',
+    // number: 0,
+    // img: '',
+    // playerStats: {
+    //   apps: 0,
+    //   goals: 0,
+    //   assists: 0,
+    //   motm: 0
+    // },
+    // loading: false,
     viewingStats: false
   }
 
   componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/users')
-      // axios.get('.json')
       .then(response => {
-        this.setState({ data: response.data })
         console.log(response)
-      })
-      .catch(error => {
-        console.log(error);
-      })
-  }
+        this.setState({data: response.data})
+      })  
+      .catch(error => alert('unable to fetch data', error));
+    }
+        
 
-// click handlers for buttons in table
-
+// click handlers for name buttons
 viewStatsHandler = () => {
   this.setState({viewingStats: true})
 }
@@ -34,58 +41,31 @@ viewStatsHandler = () => {
 closeStatsHandler = () => {
   this.setState({viewingStats: false})
 }
-
-  // onAddPlayerClick = () => {
-  //   const playerDetails = {
-  //     data: this.state.data,
-  //     newPlayer: {
-  //       name: 'joe',
-  //       number: '2',
-  //       stats: {
-  //         apps: '10',
-  //         goals: '21',
-  //         assists: '23',
-  //         motm: '1'
-  //       }
-  //     }
-  //   }
-  //   axios.post('/player.json', playerDetails)
-  //   .then(response => {
-  //     console.log (response)
-  //   })
-  //   .catch(error => console.log(error));
-  // }
-
   render() {
 
     const data = this.state.data.map(player => {
       return {
-        name: player.name,
+        name: <button 
+          onClick={this.viewStatsHandler}
+          className={classes.moreStatsButton}>{player.name}</button>,
         number: player.id,
         image: <img
           src="https://images.vexels.com/media/users/3/129733/isolated/preview/a558682b158debb6d6f49d07d854f99f-casual-male-avatar-silhouette-by-vexels.png"
           alt="player"
           className={classes.thumbnail} />,
-        // apps: player.stats.apps,
-        // goals: player.stats.goals,
-        // assists: player.stats.assists,
-        // motm: player.stats.motm,
+        apps: player.address.zipcode.slice(0, 1),
+        goals: player.address.zipcode.slice(1, 2),
+        assists: player.address.zipcode.slice(2, 3),
+        motm: player.address.zipcode.slice(3, 4),
         key: player.id,
-        more: 
-          <button 
-            className={classes.moreStatsButton}
-            onClick={this.viewStatsHandler}>
-            <i className="fas fa-chart-line"></i>
-          </button>,
         edit: <button>?</button>,
         delete: <button>x</button>
-
       }
     });
 
     const columns = [
       {
-        Header: '#',
+        Header: '',
         accessor: 'number',
         className: 'numberCol',
         width: 40,
@@ -102,6 +82,8 @@ closeStatsHandler = () => {
       {
         Header: 'Name',
         accessor: 'name',
+        headerStyle: {textAlign: 'left', fontWeight: 'bold'},
+        style: {textAlign:'left'}
       },
       {
         Header: <i className="fas fa-check"></i>,
@@ -126,13 +108,7 @@ closeStatsHandler = () => {
         accessor: 'motm',
         width: 40,
         resizable: false
-      },
-      {
-        Header: '',
-        accessor: 'more',
-        width: 60,
-        sortable: false
-      },
+      }
     ]
 
     return (
@@ -147,11 +123,10 @@ closeStatsHandler = () => {
             defaultSortDesc={true}
             expander={true}
           />
-          {/* <Button onClick={this.onAddPlayerClick()}/> */}
         </div>
         <button>Add player</button>
         <Modal show={this.state.viewingStats} modalClosed={this.closeStatsHandler}>
-          <DetailedStats stats={this.state.data} />
+          <DetailedStats data={this.state.data}/>
         </Modal>
       </Aux>
     )
