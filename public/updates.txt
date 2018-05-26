@@ -2,13 +2,11 @@ ROUTES:
 
 0. Landing page
 1. Home
-2. Stats
-* Add player
-3. Update form
-4. Player page
-5. Sign in *
-6. Register *
-7. About 
+2. Team
+3. Stats
+4. Sign in *
+5. Register *
+6. About 
 
 *************************************************************************************
 
@@ -73,14 +71,5 @@ Contact
 Instructions 
 
 *************************************************************************************
-
-FOR THE FUTURE
-
-usable for other teams
-create team badge etc from landing page
-integration with other leagues
-add languages
-make as an app
-
 
 

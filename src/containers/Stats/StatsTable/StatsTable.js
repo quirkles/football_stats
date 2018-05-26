@@ -5,36 +5,47 @@ import classes from './StatsTable.module.css';
 import Modal from '../../../components/UI/Modal/Modal';
 import Aux from '../../../hoc/Auxiliary';
 import DetailedStats from '../DetailedStats/DetailedStats';
+import Spinner from '../../../components/UI/Spinner/Spinner';
 import axios from '../../../axios-instance';
 
 class StatsTable extends Component {
   state = {
     data: [],
-    // name: '',
-    // number: 0,
-    // img: '',
-    // playerStats: {
-    //   apps: 0,
-    //   goals: 0,
-    //   assists: 0,
-    //   motm: 0
-    // },
     loading: false,
     viewingStats: false,
+    selectedPlayerId: null
   }
 
   componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/users')
       .then(response => {
-        console.log(response)
-        this.setState({ data: response.data })
+        const fetchedData = response.data.map(player => {
+          return {
+            name: <button
+              onClick={() => this.viewStatsHandler(player.id)}
+              className={classes.moreStatsButton}>{player.name}</button>,
+            number: player.id,
+            image: <img
+              src="https://images.vexels.com/media/users/3/129733/isolated/preview/a558682b158debb6d6f49d07d854f99f-casual-male-avatar-silhouette-by-vexels.png"
+              alt="player"
+              className={classes.thumbnail} />,
+            apps: player.address.zipcode.slice(0, 1),
+            goals: player.address.zipcode.slice(1, 2),
+            assists: player.address.zipcode.slice(2, 3),
+            motm: player.address.zipcode.slice(3, 4),
+            key: player.id,
+            edit: <button>?</button>,
+            delete: <button>x</button>
+          }
+        });
+        this.setState({ data: fetchedData })
       })
       .catch(error => alert('unable to fetch data', error));
   }
 
   // click handlers for clicking on name buttons
-  viewStatsHandler = () => {
-    this.setState({ viewingStats: true })
+  viewStatsHandler = (id) => {
+    this.setState({ viewingStats: true, selectedPlayerId: id })
   }
 
   closeStatsHandler = () => {
@@ -43,25 +54,7 @@ class StatsTable extends Component {
   render() {
 
     // data for rows in table
-    const data = this.state.data.map(player => {
-      return {
-        name: <button
-          onClick={this.viewStatsHandler}
-          className={classes.moreStatsButton}>{player.name}</button>,
-        number: player.id,
-        image: <img
-          src="https://images.vexels.com/media/users/3/129733/isolated/preview/a558682b158debb6d6f49d07d854f99f-casual-male-avatar-silhouette-by-vexels.png"
-          alt="player"
-          className={classes.thumbnail} />,
-        apps: player.address.zipcode.slice(0, 1),
-        goals: player.address.zipcode.slice(1, 2),
-        assists: player.address.zipcode.slice(2, 3),
-        motm: player.address.zipcode.slice(3, 4),
-        key: player.id,
-        edit: <button>?</button>,
-        delete: <button>x</button>
-      }
-    });
+    const data = this.state.data;
     // data for columns in table
     const columns = [
       {
@@ -122,6 +115,11 @@ class StatsTable extends Component {
       expander={true}
     />;
 
+    let detailedStats = <Spinner />;
+    if (this.state.data.length !== 0) {
+      detailedStats = <DetailedStats id={this.state.selectedPlayerId} data={this.state.data} /> 
+    }
+
     return (
       <Aux>
         <div className={classes.tableContainer}>
@@ -129,7 +127,7 @@ class StatsTable extends Component {
         </div>
         <button>Add player</button>
         <Modal show={this.state.viewingStats} modalClosed={this.closeStatsHandler}>
-          <DetailedStats name={this.state.data.name} />
+          {detailedStats}
         </Modal>
       </Aux>
     )
