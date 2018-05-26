@@ -5,7 +5,6 @@ import classes from './StatsTable.module.css';
 import Modal from '../../../components/UI/Modal/Modal';
 import Aux from '../../../hoc/Auxiliary';
 import DetailedStats from '../DetailedStats/DetailedStats';
-import Spinner from '../../../components/UI/Spinner/Spinner';
 import axios from '../../../axios-instance';
 
 class StatsTable extends Component {
@@ -32,7 +31,6 @@ class StatsTable extends Component {
       })
       .catch(error => alert('unable to fetch data', error));
   }
-
 
   // click handlers for clicking on name buttons
   viewStatsHandler = () => {
@@ -123,12 +121,6 @@ class StatsTable extends Component {
       defaultSortDesc={true}
       expander={true}
     />;
-  
-
-    let individualStats = <DetailedStats data={this.state.data} />
-    if (this.state.loading) {
-      individualStats = <Spinner />;
-    }
 
     return (
       <Aux>
@@ -137,7 +129,7 @@ class StatsTable extends Component {
         </div>
         <button>Add player</button>
         <Modal show={this.state.viewingStats} modalClosed={this.closeStatsHandler}>
-          {individualStats}
+          <DetailedStats name={this.state.data.name} />
         </Modal>
       </Aux>
     )
