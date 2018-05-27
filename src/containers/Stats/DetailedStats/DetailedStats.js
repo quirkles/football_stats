@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Button} from 'reactstrap';
 import classes from './DetailedStats.module.css';
 import Aux from '../../../hoc/Auxiliary';
 
@@ -10,25 +11,41 @@ class DetailedStats extends Component {
     if (this.props.id) {
       return (
         <Aux>
-          <h3>{data[id].name}</h3>
-          <div className={classes.cardImage}>
-            <p className={classes.squadNumber}>{data[id].number}</p>
-            <img
-              className={classes.image}
-              src="https://images.vexels.com/media/users/3/129733/isolated/preview/a558682b158debb6d6f49d07d854f99f-casual-male-avatar-silhouette-by-vexels.png"
-              alt="player"
-            />
+          <div className={classes.DetailedStatsContainer}>
+            <h3>{data[id].name}</h3>
+            {/* image and number */}
+              <div className={classes.cardImage}>
+                <p className={classes.squadNumber}>{data[id].number}</p>
+                  <img
+                    className={classes.image}
+                    src="https://images.vexels.com/media/users/3/129733/isolated/preview/a558682b158debb6d6f49d07d854f99f-casual-male-avatar-silhouette-by-vexels.png"
+                    alt="player"
+                  />
+              </div>
+            {/* basic stats */}
+            <hr />
+              <div className={classes.basicStats}>
+                <table className={classes.table}>
+                  <thead>
+                    <td>Apps</td>
+                    <td>Goals</td>
+                    <td>Assists</td>
+                    <td>MVP</td>
+                  </thead>
+                  <tbody>
+                    <td>{data[id].apps}</td>
+                    <td>{data[id].goals}</td>
+                    <td>{data[id].assists}</td>
+                    <td>{data[id].motm}</td>
+                  </tbody>
+                </table>
+              </div>
+            <hr/>
+          <div className={classes.buttons}>
+            <Button color="warning"><i className="fas fa-edit"></i></Button>
+            <Button color="danger"><i className="fas fa-trash"></i></Button>
           </div>
-          <div>
-            <p>Apps: {data[id].apps}</p>
-            <p>Goals: {data[id].goals}</p>
-            <p>Assists: {data[id].assists}</p>
-            <p>Motm: {data[id].motm}</p>
-          </div>
-          <div>
-            <button>Edit</button>
-            <button>Delete</button>
-          </div>
+          </div>  
         </Aux>
       );
     }

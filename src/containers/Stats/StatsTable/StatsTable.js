@@ -7,6 +7,7 @@ import Aux from '../../../hoc/Auxiliary';
 import DetailedStats from '../DetailedStats/DetailedStats';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import axios from '../../../axios-instance';
+import { Button } from 'reactstrap';
 
 class StatsTable extends Component {
   state = {
@@ -117,18 +118,23 @@ class StatsTable extends Component {
 
     let detailedStats = <Spinner />;
     if (this.state.data.length !== 0) {
-      detailedStats = <DetailedStats id={this.state.selectedPlayerId} data={this.state.data} /> 
+      detailedStats = <DetailedStats id={this.state.selectedPlayerId} data={this.state.data} />
     }
 
     return (
       <Aux>
         <div className={classes.tableContainer}>
           {dataTable}
+            <div>
+              <Button className={classes.AddPlayerButton} color='success'>
+                <i className="fas fa-user-plus"></i>
+              </Button>
+            </div>
         </div>
-        <button>Add player</button>
-        <Modal show={this.state.viewingStats} modalClosed={this.closeStatsHandler}>
-          {detailedStats}
-        </Modal>
+          <Modal show={this.state.viewingStats} modalClosed={this.closeStatsHandler}>
+            {detailedStats}
+          </Modal>
+        <Spinner />
       </Aux>
     )
   }
