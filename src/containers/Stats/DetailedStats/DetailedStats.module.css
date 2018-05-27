@@ -45,6 +45,15 @@
   padding: 10px;
 }
 
+.pieChartContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pieChart {
+  width: 30%;
+}
+
 .buttons {
   display: flex;
   justify-content: space-between;

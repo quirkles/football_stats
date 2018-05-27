@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import {Button} from 'reactstrap';
+import CircularProgressbar from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import classes from './DetailedStats.module.css';
 import Aux from '../../../hoc/Auxiliary';
 
@@ -41,6 +43,10 @@ class DetailedStats extends Component {
                 </table>
               </div>
             <hr/>
+              <div className={classes.pieChartContainer}>
+                <CircularProgressbar className={classes.pieChart} percentage={60} />
+                <CircularProgressbar className={classes.pieChart} percentage={60} />
+              </div>
           <div className={classes.buttons}>
             <Button color="warning"><i className="fas fa-edit"></i></Button>
             <Button color="danger"><i className="fas fa-trash"></i></Button>
